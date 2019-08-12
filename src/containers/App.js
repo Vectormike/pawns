@@ -1,6 +1,7 @@
 import React from "react";
+import Index from "../components/Index/indexPage";
 import { Switch, Route } from "react-router-dom";
-import Index from "../components/Index/index";
+
 import "./App.css";
 
 function App() {

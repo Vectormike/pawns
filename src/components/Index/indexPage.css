@@ -1,99 +1,8 @@
-html, body {
-    margin: 0px;
-    padding: 0px;
+html, body{
+  height: 100%;
 }
 
 
-*, *:after, *:before {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-}
-
-header {
-    z-index: 1;
-    position: fixed;
-    width: 100%;
-    height: 60px;
-    background: rgba(0, 0, 0, 0.1);
-  }
-  
-  header a {
-    color: white;
-    background: rgba(0, 0, 0, 0.1);
-    display: inline-block;
-    padding: 0px 30px;
-    height: 60px;
-    line-height: 60px;
-    text-align: center;
-    font-family: 'Roboto Slab', serif;
-    text-decoration: none;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-weight: 700;
-}
-
-#hero1 {
-    background-size: cover;
-    background-position: center center;
-    background-attachment: fixed;
-}
-
-#hero2 {
-    background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/21555/Melissani-cave-natural.jpg);
-    background-size: cover;
-    background-position: center center;
-    background-attachment: fixed;
-}
-
-.hero, .content {
-    text-align: center;
-    position: relative;
-    width: 100%;
-}
-  
-.inner {
-    min-height: 600px;
-    position: relative;
-}
-
-.hero .inner {
-    background: rgba(0, 0, 0, 0.7) url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAACCAYAAACddGYaAAAAD0lEQVQIW2NkQABjRmQOAAM+AGkQsDBSAAAAAElFTkSuQmCC) repeat;
-}
-
-.copy {
-    position: absolute;
-    top: 50%;
-    height: 10em;
-    margin-top: -5em;
-    width: 100%;
-  }
-  
-  .hero h1, .hero p {
-    color: #fff;
-  }
-  
-  .content h1, .content p {
-    color: #333;
-  }
-  
-  h1 {
-    margin: 0px;
-    font-family: 'Roboto Slab', serif;
-    font-weight: 400;
-    font-size: 32px;
-    padding: 0px 20px;
-  }
-  
-  p {
-    font-family: 'Noto Sans', sans-serif;
-    font-size: 14px;
-    padding: 0px 20px;
-  }
-  
-.button {
-    margin-left: 25%;
-}
 .btn {
     box-sizing: border-box;
     -webkit-appearance: none;
@@ -104,12 +13,10 @@ header {
     border-radius: 0.6em;
     color: #3c94e7;
     cursor: pointer;
-    display: flex;
-    align-self: center;
     font-size: 1rem;
     font-weight: 400;
     line-height: 1;
-    margin: 20px;
+    margin-left: 490px;
     padding: 1.2em 2.8em;
     text-decoration: none;
     text-align: center;
@@ -117,6 +24,7 @@ header {
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
   }
+
   .btn:hover, .btn:focus {
     color: #fff;
     outline: 0;
@@ -126,6 +34,36 @@ header {
     transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
   }
   .first:hover {
-    box-shadow: 0 0 40px 40px #4561da inset;
+    box-shadow: 0 0 10px 40px #4561da inset;
   }
   
+
+@media screen and (min-width: 600px) {
+  #bg {
+    background-image: url('https://images.dog.ceo/breeds/poodle-standard/n02113799_2466.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+  }
+
+} 
+
+@media screen and (min-width: 600px) {
+  .btn {
+    margin-left: -100px;
+    left: 50%;
+    top: 50%;
+    margin-top: -50px;
+    position: fixed;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .btn {
+    margin-left: -100px;
+    left: 50%;
+    top: 50%;
+    margin-top: -50px;
+    position: fixed;
+  }
+}

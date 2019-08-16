@@ -13,17 +13,16 @@ export function Option() {
     fetchFunc();
   }, []);
 
-  breeds = Array.of(breeds);
+  breeds = Array.of(breeds.bulldog);
   console.log(breeds);
 
-  let value = breeds.map((breed, i) => {
-    return (
-      <div>
+  return (
+    <div>
+      {breeds.map((breed, index) => (
         <select>
-          <option key={i}>{breed.bulldog}</option>
+          <option key={index} value={breed}>{breed}</option>
         </select>
-      </div>
-    );
-  });
-  return { value };
+      ))}
+    </div>
+  );
 }

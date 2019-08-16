@@ -7,12 +7,12 @@ export function Option() {
     const fetchFunc = async () => {
       const response = await fetch(`https://dog.ceo/api/breeds/list/all`);
       const results = await response.json();
-      addBreed(results.message.bulldog);
+      addBreed(results.message);
     };
 
     fetchFunc();
   }, []);
-
+  breeds = Array.of(breeds);
   console.log(breeds);
 
   return (

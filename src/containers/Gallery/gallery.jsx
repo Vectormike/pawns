@@ -1,16 +1,15 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import { Option } from "../OptionTag/optiontag";
 import List from "../DogImageList/dogimagelist";
 
-class Breed extends Component {
-  render() {
-    return (
-      <div className="container">
-        <Option />
-        <List />
-      </div>
-    );
-  }
+function Gallery() {
+  
+  return (
+    <div className="container">
+      <Option />
+      <List />
+    </div>
+  );
 }
 
-export default Breed;
+export default Gallery;

@@ -7,23 +7,21 @@ export function Option() {
     const fetchFunc = async () => {
       const response = await fetch(`https://dog.ceo/api/breeds/list/all`);
       const results = await response.json();
-      addBreed(Array.of(results.message));
+      addBreed(results.message);
     };
 
     fetchFunc();
   }, []);
 
   console.log(breeds);
-
+  const items = [];
+  for (const prop in breeds) {
+    console.log(`${prop}`);
+    items.push(<li>{prop}</li>);
+  }
   return (
     <article>
-      <section>
-        {breeds.map((breed, i) => (
-          <ul key={i} value={breed}>
-            <li key={i}>{breed}</li>
-          </ul>
-        ))}
-      </section>
+      <section>{items}</section>
     </article>
   );
 }

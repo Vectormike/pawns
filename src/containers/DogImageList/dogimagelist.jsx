@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 import {} from "../DogImage/dogimage";
 import DogImage from "../DogImage/dogimage";
 

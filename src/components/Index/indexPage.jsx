@@ -38,7 +38,7 @@ class IndexPage extends Component {
           </a>
         </nav>
         <nav className="navbar fixed-bottom">
-          <Link to="/breed">
+          <Link to="/gallery">
             <button className="btn first">View Gallery</button>
           </Link>
         </nav>

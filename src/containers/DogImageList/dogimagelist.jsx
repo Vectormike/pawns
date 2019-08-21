@@ -1,5 +1,5 @@
 import React from "react";
-import DogImage from "../DogImage/dogimage";
+import {} from "../DogImage/dogimage";
 
 export default function DogImageList() {
   return <div />;

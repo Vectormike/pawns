@@ -1,6 +1,6 @@
 import React from "react";
-import Index from "../components/Index/indexPage";
-import Gallery from "./Gallery/gallery";
+import Index from "../pages/Index/indexPage";
+import Gallery from "../pages/Gallery/gallery.jsx";
 import { Switch, Route } from "react-router-dom";
 
 import "./App.css";

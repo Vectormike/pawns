@@ -4,13 +4,14 @@ import { Menu } from "../../components/Menu/menu";
 import DogImageList from "../../components/DogImageList/dogimagelist";
 
 function Gallery() {
-  const [breeds, addBreed] = useState([]);
+  const [breeds, setBreed] = useState([]);
+  const [images, setImages] = useState([]);
 
   useEffect(() => {
     const fetchFunc = async () => {
       const response = await fetch(`https://dog.ceo/api/breeds/list/all`);
       const results = await response.json();
-      addBreed(results.message);
+      setBreed(results.message);
     };
 
     fetchFunc();
@@ -18,6 +19,20 @@ function Gallery() {
 
   let onClick = e => {
     console.log("Fuckyou");
+    this.fetchFunc(breed);
+  };
+
+  useEffect(() => {
+    fetchImages(breed);
+  }, [images]);
+
+  
+  const fetchImages = async breed => {
+    const response = await fetch(
+      `https://dog.ceo/api/breed/${breed}/images/random/3`
+    );
+    const results = await response.json();
+    setImages(results.message);
   };
 
   const items = [];

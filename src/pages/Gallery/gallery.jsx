@@ -23,17 +23,16 @@ function Gallery() {
   };
 
   useEffect(() => {
+    const fetchImages = async breed => {
+      const response = await fetch(
+        `https://dog.ceo/api/breed/${breed}/images/random/3`
+      );
+      const results = await response.json();
+      setImages(results.message);
+    };
+
     fetchImages(breed);
   }, [images]);
-
-  
-  const fetchImages = async breed => {
-    const response = await fetch(
-      `https://dog.ceo/api/breed/${breed}/images/random/3`
-    );
-    const results = await response.json();
-    setImages(results.message);
-  };
 
   const items = [];
   for (const prop in breeds) {

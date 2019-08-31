@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+//import { Link } from "react-router-dom";
 import { Menu } from "../../components/Menu/menu";
 import DogImageList from "../../components/DogImageList/dogimagelist";
 
 function Gallery() {
   const [breeds, setBreed] = useState([]);
-  const [images, setImages] = useState([]);
+  const [image, setImage] = useState([]);
 
   useEffect(() => {
     const fetchFunc = async () => {
@@ -17,30 +17,33 @@ function Gallery() {
     fetchFunc();
   }, []);
 
-  let onClick = e => {
-    console.log("Fuckyou");
-    this.fetchFunc(breed);
+  let onhandleClick = (e) => {
+    console.log(e.target.ref);
+    fetchImages();
   };
 
-  useEffect(() => {
-    const fetchImages = async breed => {
+  // useEffect(() => {
+  //   fetchImages(image);
+  // }, []);
+
+  const fetchImages = async item => {
+    try {
       const response = await fetch(
-        `https://dog.ceo/api/breed/${breed}/images/random/3`
+        `https://dog.ceo/api/breed/${item}/images/random/3`
       );
       const results = await response.json();
-      setImages(results.message);
-    };
-
-    fetchImages(breed);
-  }, [images]);
+      setImage(results.message);
+      console.log(results.message);
+    } catch (error) {
+      console.error(error)
+    }
+  };
 
   const items = [];
   for (const prop in breeds) {
     items.push(
-      <li>
-        <Link to="/breed" onClick={onClick}>
-          {prop}
-        </Link>
+      <li key={prop} onClick={onhandleClick}>
+       {prop}
       </li>
     );
   }
@@ -48,7 +51,7 @@ function Gallery() {
   return (
     <div className="container">
       <Menu items={items} />
-      <DogImageList />
+      <DogImageList image={image}/>
     </div>
   );
 }

@@ -17,9 +17,8 @@ function Gallery() {
     fetchFunc();
   }, []);
 
-  let onhandleClick = (e) => {
-    console.log(e.target.ref);
-    fetchImages();
+  let onhandleClick = e => {
+    fetchImages(e.target.innerText);
   };
 
   // useEffect(() => {
@@ -35,7 +34,7 @@ function Gallery() {
       setImage(results.message);
       console.log(results.message);
     } catch (error) {
-      console.error(error)
+      console.error(error);
     }
   };
 
@@ -43,7 +42,7 @@ function Gallery() {
   for (const prop in breeds) {
     items.push(
       <li key={prop} onClick={onhandleClick}>
-       {prop}
+        {prop}
       </li>
     );
   }
@@ -51,7 +50,7 @@ function Gallery() {
   return (
     <div className="container">
       <Menu items={items} />
-      <DogImageList image={image}/>
+      <DogImageList image={image} />
     </div>
   );
 }

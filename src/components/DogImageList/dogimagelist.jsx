@@ -1,13 +1,12 @@
 import React from "react";
-import {} from "../DogImage/dogimage";
 import DogImage from "../DogImage/dogimage";
 
-export default function DogImageList() {
-
-
+export default function DogImageList({ image }) {
   return (
     <div>
-      <DogImage />
+      {image.map((res, i) => (
+        <DogImage key={i} url={res} />
+      ))}
     </div>
   );
 }

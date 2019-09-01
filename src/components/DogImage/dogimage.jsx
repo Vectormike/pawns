@@ -1,9 +1,9 @@
 import React from 'react'
 
-function DogImage() {
+function DogImage({url}) {
     return (
         <div>
-            <img src="" alt=""/>
+            <img src={url} alt=""/>
         </div>
     )
 }

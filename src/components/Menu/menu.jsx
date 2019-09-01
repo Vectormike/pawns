@@ -6,7 +6,7 @@ export function Menu({ items }) {
     <div>
       <nav>
         <div className="dropdown hover">
-          <a href="#">Hover Menu</a>
+          <a>Hover Menu</a>
           <ul>{items}</ul>
         </div>
       </nav>

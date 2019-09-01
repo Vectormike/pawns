@@ -28,7 +28,7 @@ function Gallery() {
   const fetchImages = async item => {
     try {
       const response = await fetch(
-        `https://dog.ceo/api/breed/${item}/images/random/3`
+        `https://dog.ceo/api/breed/${item}/images/random/10`
       );
       const results = await response.json();
       setImage(results.message);

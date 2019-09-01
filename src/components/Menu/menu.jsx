@@ -4,12 +4,9 @@ import "./menu.css";
 export function Menu({ items }) {
   return (
     <div>
-      <nav>
-        <div className="dropdown hover">
-          <a>Hover Menu</a>
-          <ul>{items}</ul>
-        </div>
-      </nav>
+      <section>
+        <ul>{items}</ul>
+      </section>
     </div>
   );
 }

@@ -3,6 +3,8 @@ import React, { useState, useEffect } from "react";
 import { Menu } from "../../components/Menu/menu";
 import DogImageList from "../../components/DogImageList/dogimagelist";
 
+import './gallery.css'
+
 function Gallery() {
   const [breeds, setBreed] = useState([]);
   const [image, setImage] = useState([]);

@@ -1,9 +1,11 @@
 import React from 'react'
 
+import './dogimage.css'
+
 function DogImage({url}) {
     return (
-        <div>
-            <img src={url} alt=""/>
+        <div >
+            <img className="image" src={url} alt=""/>
         </div>
     )
 }
